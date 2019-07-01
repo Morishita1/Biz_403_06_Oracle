@@ -1,0 +1,11 @@
+-- 여기는 관리자 화면입니다.
+
+CREATE TABLESPACE user6Ts
+DATAFILE 'C:/bizwork/mydb/user6Ts.dbf'
+SIZE 100M AUTOEXTEND ON NEXT 100K;
+
+CREATE USER user6
+IDENTIFIED BY 1234
+DEFAULT TABLESPACE user6Ts;
+
+GRANT DBA to user6;
