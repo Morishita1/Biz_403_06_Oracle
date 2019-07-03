@@ -1,0 +1,18 @@
+-- 관리자 화면
+-- 데이터를 저장할때 물리적인 저장공간을 설정하는데
+-- TABLESPACE
+CREATE TABLESPACE testTS
+DATAFILE 'testTS'
+SIZE 100M AUTOEXTEND ON NEXT 100K;
+
+CREATE USER testuser
+IDENTIFIED BY 1234
+DEFAULT TABLESPACE testTS;
+
+GRANT DBA to testuser;
+REVOKE DBA FROM testuser;
+
+CREATE TABLE tbl_test(
+    t1 NUMBER PRIMATY KEY,
+    t2 NUMBER NOT NULL
+);
